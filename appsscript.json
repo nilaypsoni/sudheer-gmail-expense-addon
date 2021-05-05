@@ -1,0 +1,58 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {
+    "libraries": [{
+      "userSymbol": "GmailUtils",
+      "libraryId": "1V9HLEXHv4-7muXGhMS0XC-Lon5WX1CQhtfmjmaVp7WSHoeswwfkq1-90",
+      "version": "4",
+      "developmentMode": true
+    }, {
+      "userSymbol": "LodashGS",
+      "libraryId": "1SQ0PlSMwndIuOAgtVJdjxsuXueECtY9OGejVDS37ckSVbMll73EXf2PW",
+      "version": "5"
+    }]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": ["https://www.googleapis.com/auth/gmail.addons.current.message.readonly", "https://www.googleapis.com/auth/gmail.addons.execute", "https://www.googleapis.com/auth/script.locale", "https://www.googleapis.com/auth/script.external_request"],
+  "urlFetchWhitelist": [
+    "https://app.tripgain.com/",
+    "https://pdfsumo.com/mailparser/api/",
+    "https://auth.tripgain.com/",
+    "https://app.tripgain.com/expenses",
+    "https://www.google.com/"
+  ],
+  "runtimeVersion": "DEPRECATED_ES5",
+  "addOns": {
+    "common": {
+      "name": "TRIPGAIN",
+      "logoUrl": "http://54.39.16.196/gmail-addon.png",
+      "homepageTrigger": {
+        "runFunction": "onHomepage",
+        "enabled": true
+      },
+      "layoutProperties": {
+        "primaryColor": "#032F55",
+        "secondaryColor": "#032F55"
+      },
+      "useLocaleFromApp": true,
+    
+      "universalActions": [{
+        "label": "Learn more about Trip Gain",
+        "openLink": "https://app.tripgain.com"
+      }]
+    },
+    "gmail": {
+      "contextualTriggers": [{
+        "unconditional": {
+        },
+        "onTriggerFunction": "onGmailMessage"
+      }],
+      "openLinkUrlPrefixes": [
+      "https://mail.google.com/",
+      "https://script.google.com/",
+      "https://auth.tripgain.com/gauth/glogin.jsp/",
+      "https://app.tripgain.com/expenses"
+    ]
+    }
+  }
+}
